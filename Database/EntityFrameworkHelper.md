@@ -23,6 +23,17 @@ public DateTime? CreateTime { get; set; } // 创建时间
 public bool IsDeleted { get; set; }       // 删除标记
 ```
 
+| 名称 | 描述 |
+| - | - |
+| [EntityFrameworkHelper(DbContext, string)](#entityframeworkhelperdbcontext-string) | 使用数据库上下文和操作者 ID 实例化一个 Entity Framework Core 帮助类。 |
+| [Delete(object)](#deleteobject) | 根据主键值软删除。 |
+| [DeleteH(object)](#deletehobject) | 根据主键值硬删除。 |
+| [DeleteRange(IEnumerable&lt;object&gt;)](#deleterangeienumerableobject) | 批量软删除。 |
+| [DeleteHRange(IEnumerable&lt;object&gt;)](#deletehrangeienumerableobject) | 批量硬删除。 |
+| [DeleteHRange(IEnumerable&lt;object&gt;)](#deletehrangeienumerableobject) | 批量硬删除。 |
+| [GetBy(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)](#getbyexpressionfunctentity-bool) | 根据表达式获取实体对象。 |
+| [GetBy(Expression<Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IIncludableQueryable&lt;TEntity, object&gt;&gt;)](#getbyexpressionfunctentity-bool-funciqueryabletentity-iincludablequeryabletentity-object) | 根据表达式获取实体对象。 |
+
 ## 构造函数
 
 ### EntityFrameworkHelper(DbContext, string)
@@ -54,6 +65,7 @@ public TestController(TestContext context)
 ```
 
 ## 方法
+
 ### Delete(object)
 
 根据主键值软删除。
@@ -142,7 +154,7 @@ IEnumerable<object> ids = tests.Select(x => x.TestID).Cast<object>();
 bool ret = _helper.DeleteRange(ids);
 ```
 
-### GetBy(Expression&lt;Func&lt;TEntity, bool&gt;&gt;);
+### GetBy(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)
 
 根据表达式获取实体对象。
 
@@ -158,7 +170,7 @@ public TEntity GetBy(Expression<Func<TEntity, bool>> whereExpression);
 
 `TEntity`：实体对象。
 
-### GetBy(Expression<Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IIncludableQueryable&lt;TEntity, object&gt;&gt;);
+### GetBy(Expression<Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IIncludableQueryable&lt;TEntity, object&gt;&gt;)
 
 根据表达式获取实体对象。
 
