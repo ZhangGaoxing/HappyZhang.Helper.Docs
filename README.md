@@ -1,7 +1,7 @@
 # HappyZhang.Helper.Docs
 
 ## 目录
-* [Database]()
+* [Database](Database)
   * [ConditionExpressionHelper]()
   * [EntityFrameworkHelper]()
 * [Diagnostics]()
