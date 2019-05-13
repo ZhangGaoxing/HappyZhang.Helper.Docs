@@ -92,7 +92,7 @@ public bool DeleteH(object id);
 
 `bool`：是否硬删除成功。
 
-### DeleteRange(IEnumerable<object>)
+### DeleteRange(IEnumerable&lt;object&gt;)
 
 批量软删除。
 
@@ -103,7 +103,7 @@ public bool DeleteRange(IEnumerable<object> ids);
 #### 参数
 
 * **`ids`** `IEnumerable<object>`：主键值数组。
-
+  
 #### 返回
 
 `bool`：是否软删除成功。
@@ -117,7 +117,7 @@ IEnumerable<object> ids = tests.Select(x => x.TestID).Cast<object>();
 bool ret = _helper.DeleteRange(ids);
 ```
 
-### DeleteHRange(IEnumerable<object>)
+### DeleteHRange(IEnumerable&lt;object&gt;)
 
 批量硬删除。
 
@@ -142,7 +142,7 @@ IEnumerable<object> ids = tests.Select(x => x.TestID).Cast<object>();
 bool ret = _helper.DeleteRange(ids);
 ```
 
-### GetBy(Expression<Func<TEntity, bool>>);
+### GetBy(Expression&lt;Func&lt;TEntity, bool&gt;&gt;);
 
 根据表达式获取实体对象。
 
@@ -158,7 +158,7 @@ public TEntity GetBy(Expression<Func<TEntity, bool>> whereExpression);
 
 `TEntity`：实体对象。
 
-### GetBy(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>);
+### GetBy(Expression<Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IIncludableQueryable&lt;TEntity, object&gt;&gt;);
 
 根据表达式获取实体对象。
 
