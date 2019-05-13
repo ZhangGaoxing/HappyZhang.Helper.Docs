@@ -1,6 +1,3 @@
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
 # EntityFrameworkHelper 类
 
 <small>命名空间：[HappyZhang.Helper.Database](./)</small>
@@ -15,17 +12,16 @@ public class EntityFrameworkHelper<TEntity> where TEntity : class
 
 `TEntity`：要操作的实体。
 
-<div style="display: block;position: relative;border-radius: 8px;padding: 1rem;background-color: #fff1cc;color: #664b00;margin: 10px">
-    <p style="margin-top:0;font-weight: bold"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;注意</p>
-    <p><span>使用此帮助类进行操作时，数据库中的表必须包含如下字段：</span></p>
-    <div>
-        <p>public string CreatorID { get; set; } // 创建人 ID</p>
-        <p>public DateTime? CreateTime { get; set; } // 创建时间</p>
-        <p>public string ModifierID { get; set; } // 修改人 ID</p>
-        <p>public DateTime? ModifyTime { get; set; } // 修改时间</p>
-        <p>public bool IsDeleted { get; set; } // 删除标记</p>
-    </div>
-</div>
+## ⚠ 注意
+使用此帮助类进行操作时，数据库中的表必须包含如下字段
+
+```C#
+public string CreatorID { get; set; }     // 创建人 ID
+public string ModifierID { get; set; }    // 修改人 ID
+public DateTime? ModifyTime { get; set; } // 修改时间
+public DateTime? CreateTime { get; set; } // 创建时间
+public bool IsDeleted { get; set; }       // 删除标记
+```
 
 ## 构造函数
 
